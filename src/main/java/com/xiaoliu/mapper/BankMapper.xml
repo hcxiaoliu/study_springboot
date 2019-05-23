@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaoliu.mapper.BankMapper">
+    <select id="selectBankByCondition" parameterType="Bank" resultType="Bank">
+        select bankid,bankname from r_bank
+        <where>
+            <if test="bankid!=null and bankid gt 0">
+                bankid=#{bankid}
+            </if>
+            <if test="bankname!=null">
+                and bankname=#{bankname}
+            </if>
+        </where>
+    </select>
+  
+</mapper>
