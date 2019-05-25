@@ -22,7 +22,8 @@ public class SwaggerConfig {
                 .select()
                 //为当前包路径
                 .apis(RequestHandlerSelectors.basePackage("com.xiaoliu.controller"))
-                .paths(PathSelectors.any()).build();
+                .paths(PathSelectors.any())
+                .build();
     }
 
     //构建 api文档的详细信息函数,注意这里的注解引用的是哪个

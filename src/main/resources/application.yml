@@ -1,4 +1,7 @@
 spring:
+  devtools:
+    restart:
+      enabled: true  #设置开启热部署
   redis:
     host: ilego.club
     port: 6379
@@ -18,7 +21,7 @@ spring:
 
   datasource:
     #driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql:ilego.club:3306/xiaoliu_manager
+    url: jdbc:mysql://ilego.club:3306/xiaoliu_manager
     username: lx
     password: lx123
 server:

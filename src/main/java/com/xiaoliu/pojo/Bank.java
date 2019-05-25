@@ -1,6 +1,9 @@
 package com.xiaoliu.pojo;
 
+
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+@ApiModel("app端图片页面控制跳转")
 
 public class Bank {
     @ApiModelProperty(value="银行id",required=false)
