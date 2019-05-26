@@ -4,6 +4,7 @@ spring:
       enabled: true  #设置开启热部署
   redis:
     host: ilego.club
+    #host: 192.168.88.255
     port: 6379
     timeout: 20000
     #    集群环境打开下面注释，单机不需要打开
@@ -18,6 +19,7 @@ spring:
       max-idle: 8
       max-wait: -1
     password:
+    database: 0
 
   datasource:
     #driver-class-name: com.mysql.jdbc.Driver

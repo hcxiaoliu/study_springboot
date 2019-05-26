@@ -1,6 +1,6 @@
 package com.xiaoliu.service.Bank;
 
-import com.xiaoliu.mapper.BankMapper;
+import com.xiaoliu.mapper.bank.BankMapper;
 import com.xiaoliu.pojo.Bank;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

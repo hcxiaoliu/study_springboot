@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaoliu.mapper.admin.AdminMapper">
+
+    <sql id="key">
+        <trim suffixOverrides=",">
+            <if test="name !=null and name !='' ">
+                name,
+            </if>
+            <if test="email !=null and email !='' ">
+                email,
+            </if>
+            <if test="regtime !=null">
+                regtime,
+            </if>
+            <if test="password !=null and password !='' ">
+                password,
+            </if>
+            <if test="phone !=null and phone !='' ">
+                phone
+            </if>
+
+        </trim>
+    </sql>
+    <sql id="values">
+        <trim suffixOverrides=",">
+            <if test="name !=null and name !='' ">
+                #{name},
+            </if>
+            <if test="email !=null and email !='' ">
+                #{email},
+            </if>
+            <if test="regtime !=null">
+                #{regtime},
+            </if>
+            <if test="password !=null and password !='' ">
+                #{password},
+            </if>
+            <if test="phone !=null and phone !='' ">
+                #{phone}
+            </if>
+
+        </trim>
+    </sql>
+
+    <insert id="insterAdmin" parameterType="com.xiaoliu.pojo.AdminPO">
+        insert into r_admin(
+        <include refid="key" />
+        )
+        values(
+        <include refid="values" />
+        )
+
+    </insert>
+    
+    
+    <select id="selectByPhone" resultType="com.xiaoliu.pojo.AdminPO">
+select * from  r_admin where  phone=${phone}
+    </select>
+</mapper>

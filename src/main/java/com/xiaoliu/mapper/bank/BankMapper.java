@@ -1,4 +1,4 @@
-package com.xiaoliu.mapper;
+package com.xiaoliu.mapper.bank;
 
 import com.xiaoliu.pojo.Bank;
 import org.apache.ibatis.annotations.Param;
