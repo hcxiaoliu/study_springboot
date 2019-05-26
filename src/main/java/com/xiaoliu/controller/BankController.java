@@ -6,7 +6,11 @@ import com.xiaoliu.service.Bank.BankService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 import java.util.Map;
@@ -26,6 +30,8 @@ public class BankController {
     public List<Bank> getAllBank(){
         return bankService.findBankByCondition();
     }
+
+
 
     @ApiOperation(value = "根据银行id删除")
     @DeleteMapping("/deleteByID")
@@ -51,5 +57,14 @@ public class BankController {
     public Map<String, String> getRedis(String key){
         Map<String, String> map = cache.hgetAll(key);
         return map;
+    }
+
+    @ApiOperation(value = "freemaker")
+    @GetMapping("/index")
+    public ModelAndView index(){
+        ModelAndView mv=new ModelAndView("index");
+        List<Bank> bank = bankService.findBankByCondition();
+        mv.addObject("bank", bank);
+        return  mv;
     }
 }

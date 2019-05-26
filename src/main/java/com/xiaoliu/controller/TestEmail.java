@@ -19,7 +19,7 @@ import java.util.Date;
 @Api(description = "管理员控制层")
 @RestController
 @RequestMapping("/admin")
-public class AdminController {
+public class TestEmail {
     @Autowired
     private AdminService adminService;
 
