@@ -9,4 +9,6 @@ public interface AdminService {
     Integer insertAdmin(AdminPO adminPO);
 
     Integer login(String phone, String password);
+
+    Integer yanhzneg(AdminPO adminPO);
 }

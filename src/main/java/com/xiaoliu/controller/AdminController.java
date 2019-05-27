@@ -1,5 +1,6 @@
 package com.xiaoliu.controller;
 
+import com.xiaoliu.constant.RedisCache;
 import com.xiaoliu.pojo.AdminPO;
 import com.xiaoliu.service.admin.AdminService;
 import com.xiaoliu.until.MD5Util;
@@ -19,9 +20,10 @@ import java.util.Date;
 @Api(description = "管理员控制层")
 @RestController
 @RequestMapping("/admin")
-public class TestEmail {
+public class AdminController {
     @Autowired
     private AdminService adminService;
+
 
     @ApiOperation(value = "添加用户")
     @PostMapping("/insertAdmin")
@@ -33,11 +35,17 @@ public class TestEmail {
 
     }
 
-    @ApiOperation(value = "添加用户")
+    @ApiOperation(value = "登陆")
     @PostMapping("/login")
     public Integer Login(String password,String phone){
+
         return adminService.login(phone,password);
     }
+    @ApiOperation(value = "登陆")
+    @PostMapping("/yanzheng")
+    public Integer yanzheng(AdminPO adminPO){
 
+        return adminService.yanhzneg(adminPO);
+    }
 
 }
