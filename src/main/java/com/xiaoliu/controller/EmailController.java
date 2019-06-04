@@ -23,14 +23,10 @@ public class EmailController {
     @Autowired
     EmailService mailService;
 
-    @ApiOperation(value = "加载所有银行")
+    @ApiOperation(value = "发送邮件")
     @GetMapping("/sendMail")
     public void send(String toMail,String subject,String content){
-        for (int i = 0; i <10 ; i++) {
             mailService.sendSimpleMail(subject,toMail,content);
-        }
-
-
 
     }
 

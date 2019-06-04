@@ -15,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 import java.util.Map;
 
-@Api(description = "银行管理")
+@Api(description = "测试管理")
 @RestController
 @RequestMapping("/Bank")
 public class BankController {
@@ -25,7 +25,7 @@ public class BankController {
     private RedisCache cache;
 
 
-    @ApiOperation(value = "加载所有银行")
+    @ApiOperation(value = "加载所有")
     @GetMapping("/getAllBank")
     public List<Bank> getAllBank(){
         return bankService.findBankByCondition();
