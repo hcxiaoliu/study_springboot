@@ -41,7 +41,7 @@ public class AdminController {
 
         return adminService.login(phone,password);
     }
-    @ApiOperation(value = "登陆")
+    @ApiOperation(value = "验证")
     @PostMapping("/yanzheng")
     public Integer yanzheng(AdminPO adminPO){
 
